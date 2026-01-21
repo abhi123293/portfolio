@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Static Blog UI</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-slate-100 text-gray-800">
+
+<!-- ================= NAVBAR (Reusable Component) ================= -->
+<header class="bg-white shadow-md">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold">MyBlog</h1>
+    <nav class="space-x-6 font-medium">
+      <a href="#categories" class="hover:text-black">Categories</a>
+      <a href="#about" class="hover:text-black">About</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= HERO SECTION ================= -->
+<section class="text-center py-12">
+  <h2 class="text-4xl font-bold mb-4">Latest Blog Posts</h2>
+  <p class="text-gray-600 max-w-xl mx-auto">
+    Read articles about technology, design, and development. Clean typography and simple UI.
+  </p>
+</section>
+
+<!-- ================= BLOG CARDS GRID ================= -->
+<section class="max-w-7xl mx-auto px-6 pb-16">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+
+    <!-- BLOG CARD (Reusable Component) -->
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
+      <img src="blog2.png" class="w-full h-48 object-cover">
+      <div class="p-5">
+        <h3 class="text-xl font-semibold mb-2">Understanding UI Design</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+          Learn the basics of user interface design and how typography improves readability.
+        </p>
+        <button id="bb" class="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition">
+          Read More
+        </button>
+      </div>
+    </div>
+    <!-- BLOG CARD -->
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
+      <img src="blog1.jpg" class="w-full h-48 object-cover">
+      <div class="p-5">
+        <h3 class="text-xl font-semibold mb-2">Why Typography Matters</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+          Typography plays a key role in content presentation and user experience.
+        </p>
+        <button class="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition">
+         Read More
+        </button>
+      </div>
+    </div>
+
+    <!-- BLOG CARD -->
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
+      <img src="blog3.jpg" class="w-full h-48 object-cover">
+      <div class="p-5">
+        <h3 class="text-xl font-semibold mb-2">Reusable UI Components</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+          Reusable components help maintain consistency and reduce development time.
+        </p>
+        <button class="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition">
+          Read More
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= STATIC BLOG CONTENT PAGE UI ================= -->
+<section class="bg-blue py-16">
+  <div class="max-w-3xl mx-auto px-6">
+    <h2 class="text-3xl font-bold mb-6">Understanding UI Design</h2>
+    <p class="text-sm text-gray-500 mb-6">By Admin · Jan 2026</p>
+
+    <p class="leading-relaxed mb-4">
+      User Interface design focuses on the visual elements of a website or application.
+      A good UI improves user satisfaction and accessibility.
+    </p>
+
+    <p class="leading-relaxed mb-4">
+      Typography, spacing, and color choices play an important role in making content
+      easy to read and visually appealing.
+    </p>
+  </div>
+</section>
+<!-- ===== CATEGORIES SECTION ===== -->
+<section id="categories" class="max-w-7xl mx-auto px-6 py-10">
+  <h2 class="text-2xl font-bold mb-6">Categories</h2>
+
+  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+
+    <div class="bg-white py-3 rounded-full shadow text-center hover:bg-black hover:text-white transition cursor-pointer">
+      UI/UX
+    </div>
+
+    <div class="bg-blue-500 py-3 rounded-full shadow text-center hover:bg-black hover:text-white transition cursor-pointer">
+      Web Dev
+    </div>
+
+    <div class="bg-yellow-500 py-3 rounded-full shadow text-center hover:bg-black hover:text-white transition cursor-pointer">
+      Programming
+    </div>
+
+    <div class="bg-green-500 py-3 rounded-full shadow text-center hover:bg-black hover:text-white transition cursor-pointer">
+      Design
+    </div>
+
+    <div class="bg-white py-3 rounded-full shadow text-center hover:bg-black hover:text-white transition cursor-pointer">
+      AI
+    </div>
+
+    <div class="bg-white py-3 rounded-full shadow text-center hover:bg-black hover:text-white transition cursor-pointer">
+      Career
+    </div>
+
+  </div>
+</section>
+<!-- ===== ABOUT SECTION ===== -->
+<section id="about" class="bg-white py-16">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold mb-6">About This Blog</h2>
+
+    <p class="text-gray-600 leading-relaxed mb-4">
+      This is a static blog UI project built using HTML and Tailwind CSS.
+      It focuses on clean typography, responsive grid layout, and reusable components.
+    </p>
+
+    <p class="text-gray-600 leading-relaxed">
+      This project helps students understand modern UI design concepts and layout systems.
+    </p>
+  </div>
+</section>
+
+
+
+<!-- ================= FOOTER (Reusable Component) ================= -->
+<footer class="bg-gray-900 text-gray-300 text-center py-6">
+  <p>© 2026 Static Blog UI Project. All rights reserved.</p>
+</footer>
+<script>
+  const bl = document.getElementById("bb");
+  bl.addEventListener("click",function(){alert('on update 🎉');});
+
+
+  
+</script>
+
+</body>
+</html>

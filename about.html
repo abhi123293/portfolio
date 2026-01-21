@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-100 min-h-screen">
+
+  <!-- HEADER -->
+  <header class="bg-white shadow-md px-4 py-4 flex items-center justify-between relative">
+
+    <!-- Back -->
+    <div class="bg-black px-4 py-2 rounded-lg shadow-lg">
+      <a href="showcase.html" class="text-white font-semibold">⬅ Back</a>
+    </div>
+
+    <!-- Desktop Menu -->
+    <nav class="hidden md:flex space-x-6 font-semibold text-gray-700">
+      <a href="about.html" class="text-black font-bold">About</a>
+      <a href="contact.html" class="hover:text-black transition">Contact</a>
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <button id="menuBtn" class="md:hidden text-3xl font-bold">☰</button>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu"
+         class="hidden absolute top-full right-4 mt-3 bg-white shadow-lg rounded-xl w-40 py-3 text-center">
+      <a href="about.html" class="block py-2 bg-gray-100">About</a>
+      <a href="contact.html" class="block py-2 hover:bg-gray-100">Contact</a>
+    </div>
+
+  </header>
+
+  <!-- CONTENT -->
+  <div class="flex items-center justify-center px-4 py-16">
+
+    <div class="bg-white max-w-xl w-full p-8 rounded-2xl shadow-xl text-center">
+
+      <h1 class="text-3xl font-bold mb-4">About Us</h1>
+
+      <p class="text-gray-600 mb-4">
+        We are a small team focused on delivering quality products at affordable prices.
+        Customer satisfaction is our first priority.
+      </p>
+
+      <p class="text-gray-600">
+        Our mission is to provide reliable products that you can trust and use every day.
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- JS for Mobile Menu -->
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  </script>
+
+</body>
+</html>

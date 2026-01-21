@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Static Weather UI</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-sky-500 to-indigo-700 flex items-center justify-center p-6">
+
+  <!-- MAIN CARD -->
+  <div class="bg-white/90 backdrop-blur rounded-2xl shadow-2xl p-8 w-full max-w-5xl">
+
+    <!-- HEADER -->
+    <div class="text-center mb-8">
+      <h1 class="text-3xl font-bold">Weather Info</h1>
+      <p class="text-gray-600">Select a weather type to view details</p>
+    </div>
+
+    <!-- WEATHER BUTTONS -->
+    <div class="flex flex-wrap justify-center gap-4 mb-10">
+      <button onclick="showWeather('sunny')" class="px-5 py-2 rounded-full bg-yellow-400 hover:bg-yellow-500 font-semibold">☀️ Sunny</button>
+      <button onclick="showWeather('rainy')" class="px-5 py-2 rounded-full bg-blue-400 hover:bg-blue-500 text-white font-semibold">🌧 Rainy</button>
+      <button onclick="showWeather('cloudy')" class="px-5 py-2 rounded-full bg-gray-400 hover:bg-gray-500 text-white font-semibold">☁️ Cloudy</button>
+      <button onclick="showWeather('storm')" class="px-5 py-2 rounded-full bg-purple-500 hover:bg-purple-600 text-white font-semibold">⛈ Storm</button>
+    </div>
+
+    <!-- WEATHER CARDS GRID -->
+    <div id="weatherGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+      <!-- DEFAULT CARD -->
+      <div class="col-span-full text-center text-gray-600 text-lg">
+        Please select a weather type ☝️
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- JS -->
+  <script>
+    const weatherGrid = document.getElementById("weatherGrid");
+
+    function showWeather(type) {
+
+      let cards = "";
+
+      if (type === "sunny") {
+        cards = `
+          <div class="bg-yellow-100 p-6 rounded-xl shadow text-center">
+            <div class="text-5xl mb-3">☀️</div>
+            <h3 class="font-bold text-xl">Sunny</h3>
+            <p class="text-gray-700">Temperature: 35°C</p>
+          </div>
+
+          <div class="bg-yellow-100 p-6 rounded-xl shadow text-center">
+            <div class="text-5xl mb-3">🧴</div>
+            <h3 class="font-bold text-xl">Tip</h3>
+            <p class="text-gray-700">Use sunscreen</p>
+          </div>
+
+          <div class="bg-yellow-100 p-6 rounded-xl shadow text-center">
+            <div class="text-5xl mb-3">🥤</div>
+            <h3 class="font-bold text-xl">Hydration</h3>
+            <p class="text-gray-700">Drink more water</p>
+          </div>
+        `;
+      }
+
+      else if (type === "rainy") {
+        cards = `
+          <div class="bg-blue-100 p-6 rounded-xl shadow text-center">
+            <div class="text-5xl mb-3">🌧</div>
+            <h3 class="font-bold text-xl">Rainy</h3>
+            <p class="text-gray-700">Temperature: 26°C</p>
+          </div>
+
+          <div class="bg-blue-100 p-6 rounded-xl shadow text-center">
+            <div class="text-5xl mb-3">☂️</div>
+            <h3 class="font-bold text-xl">Carry Umbrella</h3>
+            <p class="text-gray-700">Heavy showers expected</p>
+          </div>
+
+          <div class="bg-blue-100 p-6 rounded-xl shadow text-center">
+            <div class="text-5xl mb-3">🚗</div>
+            <h3 class="font-bold text-xl">Driving</h3>
+            <p class="text-gray-700">Drive carefully</p>
+          </div>
+        `;
+      }
+
+      else if (type === "cloudy") {
+        cards = `
+          <div class="bg-gray-100 p-6 rounded-xl shadow text-center">
+            <div class="text-5xl mb-3">☁️</div>
+            <h3 class="font-bold text-xl">Cloudy</h3>
+            <p class="text-gray-700">Temperature: 28°C</p>
+          </div>
+
+          <div class="bg-gray-100 p-6 rounded-xl shadow text-center">
+            <div class="text-5xl mb-3">🌥</div>
+            <h3 class="font-bold text-xl">Mild Weather</h3>
+            <p class="text-gray-700">Good for travel</p>
+          </div>
+
+          <div class="bg-gray-100 p-6 rounded-xl shadow text-center">
+            <div class="text-5xl mb-3">📷</div>
+            <h3 class="font-bold text-xl">Photography</h3>
+            <p class="text-gray-700">Nice lighting</p>
+          </div>
+        `;
+      }
+
+      else if (type === "storm") {
+        cards = `
+          <div class="bg-purple-100 p-6 rounded-xl shadow text-center">
+            <div class="text-5xl mb-3">⛈</div>
+            <h3 class="font-bold text-xl">Storm</h3>
+            <p class="text-gray-700">Temperature: 24°C</p>
+          </div>
+
+          <div class="bg-purple-100 p-6 rounded-xl shadow text-center">
+            <div class="text-5xl mb-3">🏠</div>
+            <h3 class="font-bold text-xl">Stay Inside</h3>
+            <p class="text-gray-700">Avoid outdoor travel</p>
+          </div>
+
+          <div class="bg-purple-100 p-6 rounded-xl shadow text-center">
+            <div class="text-5xl mb-3">🔌</div>
+            <h3 class="font-bold text-xl">Power</h3>
+            <p class="text-gray-700">Charge devices</p>
+          </div>
+        `;
+      }
+
+      weatherGrid.innerHTML = cards;
+    }
+  </script>
+
+</body>
+</html>
